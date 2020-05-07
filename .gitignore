@@ -1,0 +1,7 @@
+build/
+build_isolated/
+devel/
+devel_isolated/
+extras/
+.rosinstall
+*.bag
