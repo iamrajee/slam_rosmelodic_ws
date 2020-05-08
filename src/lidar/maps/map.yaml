@@ -1,4 +1,4 @@
-image: /home/rajendra/catkin_ws/src/lidar/maps/map.pgm
+image: /home/rajendra/slam_rosmelodic_ws/src/lidar/maps/map.pgm
 resolution: 0.050000
 origin: [-10.000000, -10.000000, 0.000000]
 negate: 0
