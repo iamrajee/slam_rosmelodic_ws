@@ -3,7 +3,7 @@
   <!--  ========================== gazebo and gazebo_gui ================== -->
   <arg name="world_name" default="$(find test_slam)/worlds/2world.world"/>
   <arg name="gui" default="false"/> <!-- overwritten -->
-  <include file="$(find test_slam)/launch/2worldlauncher.launch">
+  <include file="$(find test_slam)/launch/worldlauncher.launch">
     <arg name="world_name" value="$(arg world_name)"/>
     <arg name="gui" value="$(arg gui)"/>
   </include>
