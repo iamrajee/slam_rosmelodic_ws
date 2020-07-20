@@ -35,7 +35,7 @@ Terminal: roslaunch test_slam navigation.launch
 > Contains mesh files which are used in robot
 
 #### param
-> Contains param files
+> Contains param files like base_local_planner_params.yaml.
 
 #### rviz
 > Contains saved rviz configuration.
