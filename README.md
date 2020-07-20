@@ -46,7 +46,7 @@ This ROS melodic workspace is for testing various SLAM methods(Gmapping, Karto, 
 
 
 ## Package description
-* ## [moveit_task_constructor](src/test_slam)
+* ## [test_slam](src/test_slam)
     
     ### Mapping
     > To do mapping run slam.launch file along with telop. Also, you can which slam_method to use among [Gmapping, Karto, Hector, Cartographer].
