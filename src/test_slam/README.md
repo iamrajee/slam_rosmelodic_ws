@@ -20,22 +20,22 @@ Terminal: roslaunch test_slam navigation.launch
 # Package Description
 
 #### Launch
-> Contains various launch files. It have four sub-folder inside.
+> Contains various launch files related to slam, navigation, gazebo, slam_methods.
 
 #### Worlds
 > Contain .world file, one which is used gazebo.
 
-#### config
-> Contains various configuration file like 
-
 #### maps
-> Contains saved map files
+> This is where map files are saved.
 
 #### meshes
 > Contains mesh files which are used in robot
 
 #### param
-> Contains param files like base_local_planner_params.yaml.
+> Contains param files like base_local_planner_params.yaml
+
+#### config
+> Contains other configuration file like karto_mapper_params.yaml
 
 #### rviz
 > Contains saved rviz configuration.
