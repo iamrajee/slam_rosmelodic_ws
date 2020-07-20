@@ -6,7 +6,7 @@
 [![Gem Version](http://img.shields.io/gem/v/badgerbadgerbadger.svg?style=flat-square)](https://rubygems.org/gems/badgerbadgerbadger)
 --->
 
-This ROS melodic workspace is created on Ubuntu 18.04.  Here I have worked on several moveit related projects like Pick, Place, Pouring task for multi-manipulator system using MoveIt Task Constructor(MTC).
+This ROS melodic workspace is for testing various SLAM methods(Gmapping, Karto, Hector, Cartographer etc).
 <br/><br/>
 
 ## Table of content
@@ -47,25 +47,25 @@ This ROS melodic workspace is created on Ubuntu 18.04.  Here I have worked on se
 
 ## Package description
 * ## [moveit_task_constructor](src/test_slam)
-
-    ---
-    ***Mapping***
-    ---
     
-    #### 1. Run default Pick & Place demo of MTC
-    > This is the default Pick & Place demo provided by the MTC.
+    ### Mapping
+    > To do mapping run slam.launch file along with telop. Also, you can which slam_method to use among [Gmapping, Karto, Hector, Cartographer].
     ##### Run
     
     ```
-    Terminal 1: roslaunch moveit_task_constructor_demo demo.launch
+    Terminal 1: roslaunch test_slam slam.launch --slam_method:=hector
     ```
     ```
-    Terminal 2: roslaunch moveit_task_constructor_demo pickplace.launch
+    Terminal 2: roslaunch test_slam teleop.launch
     ```
 
-    ---
-    ***Navigation***
-    ---
+    ### Navigation
+    > After mapping you can run navigation by running navigation.launch file.
+    ##### Run
+    
+    ```
+    Terminal: roslaunch test_slam navigation.launch
+    ```
 
 ---
 <br/><br/>
