@@ -19,6 +19,26 @@ Terminal: roslaunch test_slam navigation.launch
 
 # Package Description
 
-## Launch
+#### Launch
+> Contains various launch files. It have four sub-folder inside.
 
-## Worlds
+#### Worlds
+> Contain .world file, one which is used gazebo.
+
+#### config
+> Contains various configuration file like 
+
+#### maps
+> Contains saved map files
+
+#### meshes
+> Contains mesh files which are used in robot
+
+#### param
+> Contains param files
+
+#### rviz
+> Contains saved rviz configuration.
+
+#### urdf
+> Contains robot model urdfs. Here burger.
