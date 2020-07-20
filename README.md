@@ -53,7 +53,7 @@ This ROS melodic workspace is for testing various SLAM methods(Gmapping, Karto, 
     ##### Run
     
     ```
-    Terminal 1: roslaunch test_slam slam.launch --slam_method:=hector
+    Terminal 1: roslaunch test_slam slam.launch slam_method:=gmapping          #here gmapping is default
     ```
     ```
     Terminal 2: roslaunch test_slam teleop.launch
