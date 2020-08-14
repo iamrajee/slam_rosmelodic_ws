@@ -1,5 +1,7 @@
 <launch>
   
+  <arg name="waypoint" default="false"/>
+
   <!-- =============== gazebo =================== -->
   <include file="$(find test_slam)/launch/gazebo/gazebo.launch">
       <arg name="gui" value="false"/>
@@ -33,8 +35,12 @@
   <!-- ====================== rviz ================== -->
   <arg name="rviz" default="true"/>
   <group if="$(arg rviz)">
-    <node pkg="rviz" type="rviz" name="rviz" required="true"
-          args="-d $(find test_slam)/rviz/navigation.rviz"/>
+    <!-- <group if="$(arg waypoint)"> -->
+      <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find test_slam)/rviz/navigation.rviz" unless="$(arg waypoint)"/>
+      <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find test_slam)/rviz/navigation.rviz /move_base_simple/goal:=/move_base_simple/goal2" if="$(arg waypoint)"/>
+          <!-- <remap from="/move_base_simple/goal" to="/move_base_simple/goal2"/> -->
+      <!-- </node> -->
+    <!-- </group> -->
   </group>
 
 </launch>
