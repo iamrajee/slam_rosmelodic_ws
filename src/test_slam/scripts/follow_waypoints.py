@@ -183,7 +183,6 @@ class PathComplete(State):
 
 def main():
     rospy.init_node('follow_waypoints')
-    print("flag1")
     sm = StateMachine(outcomes=['success'])
 
     with sm:

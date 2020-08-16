@@ -1,14 +1,16 @@
 <launch>
   
+  <!-- ============== Arguments =============-->
   <arg name="waypoint" default="false"/>
+  <arg name="world_name" default="world.world"/>
+  <arg name="model" default="tb3burger"/>
 
   <!-- =============== gazebo =================== -->
   <include file="$(find test_slam)/launch/gazebo/gazebo.launch">
       <arg name="gui" value="false"/>
+      <arg name="world_name" default="$(arg world_name)"/>
+      <arg name="model" default="$(arg model)"/>
   </include>
-
-  <!-- ============== model =============-->
-  <arg name="model" default="tb3burger"/>
 
   <!-- ==================== robot_description ===================== -->
   <param name="robot_description" command="$(find xacro)/xacro --inorder $(find test_slam)/urdf/$(arg model).urdf.xacro" />
@@ -20,8 +22,8 @@
   </node>
 
   <!-- =================== Map server ================== -->
-  <arg name="map_file" default="$(find test_slam)/maps/map3.yaml"/>
-  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+  <arg name="map_file" default="map3.yaml"/>
+  <node pkg="map_server" name="map_server" type="map_server" args="$(find test_slam)/maps/$(arg map_file)"/>
 
   <!-- =============== AMCL - for localisation ===================== -->
   <include file="$(find test_slam)/launch/navigation/amcl.launch"/>

@@ -2,14 +2,17 @@
   <!-- Arguments -->
   <arg name="slam_methods" default="gmapping" doc="slam type [gmapping, cartographer, hector, karto, frontier_exploration]"/>
   <arg name="configuration_basename" default="turtlebot3_lds_2d.lua"/>
+  <arg name="world_name" default="world.world"/>
+  <arg name="model" default="tb3burger"/>
 
   <!-- ============================= gazebo ============================ -->
   <include file="$(find test_slam)/launch/gazebo/gazebo.launch">
-    <arg name="gui" value="true"/>
+    <!-- <arg name="gui" value="true"/> -->
+    <arg name="world_name" default="$(arg world_name)"/>
+    <arg name="model" default="$(arg model)"/>
   </include>
 
   <!-- ======= robot_description (param:used by joint_state_publisher & robot_state_publisher)======= -->
-  <arg name="model" default="tb3burger"/>
   <param name="robot_description" command="$(find xacro)/xacro --inorder $(find test_slam)/urdf/$(arg model).urdf.xacro" />
 
   <!-- ========================= robot_state_publisher ======================== -->

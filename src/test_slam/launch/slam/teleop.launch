@@ -1,8 +1,6 @@
 <launch>
-  <arg name="model" default="burger"/>
+  <arg name="model" default="tb3burger"/>
   <param name="model" value="$(arg model)"/>
-
   <!-- turtlebot3_teleop_key already has its own built in velocity smoother -->
-  <node pkg="turtlebot3_teleop" type="turtlebot3_teleop_key" name="turtlebot3_teleop_keyboard"  output="screen">
-  </node>
+  <node pkg="test_slam" type="teleop.py" name="teleop"  output="screen"/>
 </launch>

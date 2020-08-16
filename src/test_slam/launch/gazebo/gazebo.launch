@@ -1,10 +1,10 @@
 <launch>
 
   <!--  ========================== gazebo and gazebo_gui ================== -->
-  <arg name="world_name" default="$(find test_slam)/worlds/world.world"/>
-  <arg name="gui" default="false"/> <!-- overwritten -->
+  <arg name="world_name" default="world.world"/>
+  <arg name="gui" default="true"/> <!-- overwritten -->
   <include file="$(find test_slam)/launch/gazebo/worldlauncher.launch">
-    <arg name="world_name" value="$(arg world_name)"/>
+    <arg name="world_name" value="$(find test_slam)/worlds/$(arg world_name)"/>
     <arg name="gui" value="$(arg gui)"/>
   </include>
 
