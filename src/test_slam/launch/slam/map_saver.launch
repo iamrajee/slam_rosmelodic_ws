@@ -1,0 +1,4 @@
+<launch>
+    <arg name="map_file" default="map"/>
+    <node pkg="map_server" type="map_saver" name="map_saver" output="screen" args="-f $(find test_slam)/maps/$(arg map_file)"/>
+</launch>

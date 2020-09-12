@@ -6,6 +6,7 @@ import actionlib
 from smach import State,StateMachine
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 from geometry_msgs.msg import PoseWithCovarianceStamped, PoseArray ,PointStamped, PoseStamped
+from nav_msgs.msg import Path
 from std_msgs.msg import Empty
 from tf import TransformListener
 import tf
@@ -78,7 +79,7 @@ class GetPath(State):
     def __init__(self):
         State.__init__(self, outcomes=['success'], input_keys=['waypoints'], output_keys=['waypoints'])
         # Create publsher to publish waypoints as pose array so that you can see them in rviz, etc.
-        self.poseArray_publisher = rospy.Publisher('/waypoints', PoseArray, queue_size=1)
+        # self.poseArray_publisher = rospy.Publisher('/waypoints', PoseArray, queue_size=1)
 
         # Start thread to listen for reset messages to clear the waypoint queue
         def wait_for_path_reset():
@@ -98,7 +99,7 @@ class GetPath(State):
         global waypoints
         waypoints = [] # the waypoint queue
         # publish empty waypoint queue as pose array so that you can see them the change in rviz, etc.
-        self.poseArray_publisher.publish(convert_PoseWithCovArray_to_PoseArray(waypoints))
+        # self.poseArray_publisher.publish(convert_PoseWithCovArray_to_PoseArray(waypoints))
 
     def execute(self, userdata):
         global waypoints
@@ -127,27 +128,28 @@ class GetPath(State):
             """thread worker function"""
             data_from_start_journey = rospy.wait_for_message('start_journey', Empty)
             rospy.loginfo('Recieved path READY start_journey')
-            with open(output_file_path, 'r') as file:
-                reader = csv.reader(file, delimiter = ',')
-                for row in reader:
-                    print row
-                    current_pose = PoseStamped() 
-                    current_pose.pose.position.x     =    float(row[0])
-                    current_pose.pose.position.y     =    float(row[1])
-                    current_pose.pose.position.z     =    float(row[2])
-                    current_pose.pose.orientation.x = float(row[3])
-                    current_pose.pose.orientation.y = float(row[4])
-                    current_pose.pose.orientation.z = float(row[5])
-                    current_pose.pose.orientation.w = float(row[6])
-                    waypoints.append(current_pose)
-                    self.poseArray_publisher.publish(convert_PoseWithCovArray_to_PoseArray(waypoints))
+            # with open(output_file_path, 'r') as file:
+            #     reader = csv.reader(file, delimiter = ',')
+            #     for row in reader:
+            #         print row
+            #         current_pose = PoseStamped() 
+            #         current_pose.pose.position.x     =    float(row[0])
+            #         current_pose.pose.position.y     =    float(row[1])
+            #         current_pose.pose.position.z     =    float(row[2])
+            #         current_pose.pose.orientation.x = float(row[3])
+            #         current_pose.pose.orientation.y = float(row[4])
+            #         current_pose.pose.orientation.z = float(row[5])
+            #         current_pose.pose.orientation.w = float(row[6])
+            #         waypoints.append(current_pose)
+            #         self.poseArray_publisher.publish(convert_PoseWithCovArray_to_PoseArray(waypoints))
             self.start_journey_bool = True
             
             
         start_journey_thread = threading.Thread(target=wait_for_start_journey)
         start_journey_thread.start()
 
-        topic = "/move_base_simple/goal2"
+        # topic = "/move_base_simple/goal2"
+        topic = "/waypoint_nav"
         rospy.loginfo("Waiting to recieve waypoints via Pose msg on topic %s" % topic)
         rospy.loginfo("To start following waypoints: 'rostopic pub /path_ready std_msgs/Empty -1'")
         rospy.loginfo("OR")
@@ -155,18 +157,20 @@ class GetPath(State):
 
 
         # Wait for published waypoints or saved path  loaded
-        while (not self.path_ready and not self.start_journey_bool):
+        while(1):
             try:
-                pose = rospy.wait_for_message(topic, PoseStamped, timeout=1)
+                recieved_msgs = rospy.wait_for_message(topic, Path, timeout=1)
+                waypoints=recieved_msgs.poses
+                break
             except rospy.ROSException as e:
                 if 'timeout exceeded' in e.message:
                     continue  # no new waypoint within timeout, looping...
                 else:
                     raise e
-            rospy.loginfo("Recieved new waypoint")
-            waypoints.append(pose)
+            rospy.loginfo("Recieved new waypoints")
+            # waypoints.append(pose)
             # publish waypoint queue as pose array so that you can see them in rviz, etc.
-            self.poseArray_publisher.publish(convert_PoseWithCovArray_to_PoseArray(waypoints))
+            # self.poseArray_publisher.publish(convert_PoseWithCovArray_to_PoseArray(waypoints))
 
         # Path is ready! return success and move on to the next state (FOLLOW_PATH)
         return 'success'

@@ -2,13 +2,15 @@
   
   <!-- ============== Arguments =============-->
   <arg name="waypoint" default="false"/>
-  <arg name="world_name" default="world.world"/>
+  <arg name="world_name" default="world"/>
   <arg name="model" default="tb3burger"/>
+  <arg name="map_file" default="map3"/>
+  <arg name="gui" default="false"/>
 
   <!-- =============== gazebo =================== -->
   <include file="$(find test_slam)/launch/gazebo/gazebo.launch">
-      <arg name="gui" value="false"/>
-      <arg name="world_name" default="$(arg world_name)"/>
+      <arg name="gui" value="$(arg gui)"/>
+      <arg name="world_name" default="$(arg world_name).world"/>
       <arg name="model" default="$(arg model)"/>
   </include>
 
@@ -22,8 +24,7 @@
   </node>
 
   <!-- =================== Map server ================== -->
-  <arg name="map_file" default="map3.yaml"/>
-  <node pkg="map_server" name="map_server" type="map_server" args="$(find test_slam)/maps/$(arg map_file)"/>
+  <node pkg="map_server" name="map_server" type="map_server" args="$(find test_slam)/maps/$(arg map_file).yaml"/>
 
   <!-- =============== AMCL - for localisation ===================== -->
   <include file="$(find test_slam)/launch/navigation/amcl.launch"/>

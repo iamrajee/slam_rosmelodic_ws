@@ -26,8 +26,8 @@
     </plugin>
   </gazebo>
 
-  <!-- camera -->
-  <gazebo reference="camera">
+  <!-- camera_link -->
+  <gazebo reference="camera_link">
     <sensor type="depth" name="camera1">
         <always_on>1</always_on>
         <update_rate>20.0</update_rate>
@@ -50,7 +50,7 @@
          <plugin name="camera_controller" filename="libgazebo_ros_openni_kinect.so">
             <alwaysOn>true</alwaysOn>
             <updateRate>10.0</updateRate>
-            <cameraName>camera</cameraName>
+            <cameraName>camera_link</cameraName>
             <frameName>camera_link_optical</frameName>                   
             <imageTopicName>/rawbot/camera/rgb/image_raw</imageTopicName>
             <depthImageTopicName>/rawbot/camera/depth/image_raw</depthImageTopicName>
@@ -76,15 +76,17 @@
   <gazebo reference="base_scan">
     <sensor type="ray" name="head_hokuyo_sensor">
       <pose>0 0 0 0 0 0</pose>
-      <visualize>false</visualize>
+      <visualize>true</visualize>
       <update_rate>40</update_rate>
       <ray>
         <scan>
           <horizontal>
             <samples>720</samples>
             <resolution>1</resolution>
-            <min_angle>-1.570796</min_angle>
-            <max_angle>1.570796</max_angle>
+            <!-- <min_angle>-1.570796</min_angle>
+            <max_angle>1.570796</max_angle> -->
+            <min_angle>-2.655</min_angle>
+            <max_angle>2.655</max_angle>
           </horizontal>
         </scan>
         <range>
@@ -108,6 +110,19 @@
       </plugin>
     </sensor>
   </gazebo>
-
+  
+  <!-- since there are multiple uvc and uvc_support link, we include their gazebo color in their corresponding macro -->
+  <gazebo reference="wheel_left_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="wheel_right_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="base_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="camera_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
 
 </robot>
