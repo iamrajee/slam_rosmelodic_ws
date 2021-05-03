@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>stdr_parser</name>
+  <version>0.3.2</version>
+  <description>Provides a library to STDR Simulator, to parse yaml and xml description files.</description>
+
+  <maintainer email="zalidis@gmail.com">Chris Zalidis</maintainer>
+
+  <license>GPLv3</license>
+
+  <url type="website">http://stdr-simulator-ros-pkg.github.io</url>
+  <url type="bugtracker">https://github.com/stdr-simulator-ros-pkg/stdr_simulator/issues</url>
+  <url type="repository">https://github.com/stdr-simulator-ros-pkg/stdr_simulator</url>
+
+  <author>Manos Tsardoulias, Chris Zalidis, Aris Thallas</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_modules</build_depend>
+
+  <depend>roscpp</depend>
+  <depend>roslib</depend>
+  <depend>stdr_msgs</depend>
+  <depend>tinyxml</depend>
+  <depend>yaml-cpp</depend>
+
+  <export>
+  </export>
+</package>

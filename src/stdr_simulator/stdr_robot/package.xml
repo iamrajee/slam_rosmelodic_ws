@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>stdr_robot</name>
+  <version>0.3.2</version>
+  <description>Provides robot, sensor implementation, using nodelets for stdr_server to load them.</description>
+
+  <maintainer email="zalidis@gmail.com">Chris Zalidis</maintainer>
+
+  <license>GPLv3</license>
+
+  <url type="website">http://stdr-simulator-ros-pkg.github.io</url>
+  <url type="bugtracker">https://github.com/stdr-simulator-ros-pkg/stdr_simulator/issues</url>
+  <url type="repository">https://github.com/stdr-simulator-ros-pkg/stdr_simulator</url>
+
+  <author>Manos Tsardoulias, Chris Zalidis, Aris Thallas</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>tf</depend>
+  <depend>sensor_msgs</depend>
+  <depend>stdr_msgs</depend>
+  <depend>stdr_parser</depend>
+  <depend>nav_msgs</depend>
+  <depend>nodelet</depend>
+  <depend>actionlib</depend>
+  <depend>geometry_msgs</depend>
+
+  <exec_depend>stdr_server</exec_depend>
+
+  <export>
+    <nodelet plugin="${prefix}/robot_plugins.xml" />
+  </export>
+
+</package>

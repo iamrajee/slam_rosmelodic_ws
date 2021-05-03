@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>stdr_gui</name>
+  <version>0.3.2</version>
+  <description>A gui in Qt for visualizing purposes in STDR Simulator.</description>
+
+  <maintainer email="zalidis@gmail.com">Chris Zalidis</maintainer>
+
+  <license>GPLv3</license>
+
+  <url type="website">http://stdr-simulator-ros-pkg.github.io</url>
+  <url type="bugtracker">https://github.com/stdr-simulator-ros-pkg/stdr_simulator/issues</url>
+  <url type="repository">https://github.com/stdr-simulator-ros-pkg/stdr_simulator</url>
+
+  <author>Manos Tsardoulias</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>roslib</depend>
+  <depend>tf</depend>
+  <depend>stdr_msgs</depend>
+  <depend>stdr_server</depend>
+  <depend>stdr_robot</depend>
+  <depend>stdr_parser</depend>
+  <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
+
+  <build_depend>libqt4-dev</build_depend>
+  <exec_depend>libqt4</exec_depend>
+
+  <export>
+  </export>
+</package>

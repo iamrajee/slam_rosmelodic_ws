@@ -1,0 +1,4 @@
+rsm_msgs/GoalStatus status			# Goal status
+---
+bool success                        # Indicate successful run of triggered service
+string message                      # Informational, e.g. for error messages

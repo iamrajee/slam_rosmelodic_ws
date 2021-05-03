@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>stdr_server</name>
+  <version>0.3.2</version>
+  <description>Implements synchronization and coordination functionalities of STDR Simulator.</description>
+
+  <maintainer email="zalidis@gmail.com">Chris Zalidis</maintainer>
+
+  <license>GPLv3</license>
+
+  <url type="website">http://stdr-simulator-ros-pkg.github.io</url>
+  <url type="bugtracker">https://github.com/stdr-simulator-ros-pkg/stdr_simulator/issues</url>
+  <url type="repository">https://github.com/stdr-simulator-ros-pkg/stdr_simulator</url>
+
+  <author>Chris Zalidis</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>tf</depend>
+  <depend>nav_msgs</depend>
+  <depend>stdr_msgs</depend>
+  <depend>actionlib</depend>
+  <depend>nodelet</depend>
+  <depend>map_server</depend>
+  <depend>yaml-cpp</depend>
+  <depend>visualization_msgs</depend>
+
+  <test_depend>rostest</test_depend>
+
+  <export>
+  </export>
+</package>

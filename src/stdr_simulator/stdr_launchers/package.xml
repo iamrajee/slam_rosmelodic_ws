@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="2">
+ <name>stdr_launchers</name>
+  <version>0.3.2</version>
+  <description>Launch files, to easily bringup server, robots, guis</description>
+
+  <maintainer email="zalidis@gmail.com">Chris Zalidis</maintainer>
+
+  <license>GPLv3</license>
+
+  <url type="website">http://stdr-simulator-ros-pkg.github.io</url>
+  <url type="bugtracker">https://github.com/stdr-simulator-ros-pkg/stdr_simulator/issues</url>
+  <url type="repository">https://github.com/stdr-simulator-ros-pkg/stdr_simulator</url>
+
+  <author>Chris Zalidis</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>stdr_server</exec_depend>
+  <exec_depend>stdr_robot</exec_depend>
+  <exec_depend>stdr_gui</exec_depend>
+  <exec_depend>stdr_resources</exec_depend>
+  <exec_depend>rviz</exec_depend>
+
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+  </export>
+</package>
