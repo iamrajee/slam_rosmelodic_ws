@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<robot name="trial_mob_rob" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find trial_mob_rob_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find trial_mob_rob_description)/urdf/trial_mob_rob.trans" />
+<xacro:include filename="$(find trial_mob_rob_description)/urdf/trial_mob_rob.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0034871190351591563 0.0007044231053578187 0.08143236205127172"/>
+    <mass value="13.649942665813256"/>
+    <inertia ixx="0.33183" ixy="0.0" ixz="0.0" iyy="0.352816" iyz="-8.7e-05" izz="0.605353"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://trial_mob_rob_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://trial_mob_rob_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Left_Wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-1.1903516619355542e-07 0.02065162529831502 -1.3388605057951253e-07"/>
+    <mass value="1.711543338342059"/>
+    <inertia ixx="0.002492" ixy="0.0" ixz="0.0" iyy="0.004743" iyz="0.0" izz="0.002492"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.007737 0.192779 -0.065656"/>
+    <geometry>
+      <mesh filename="package://trial_mob_rob_description/meshes/Left_Wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.007737 0.192779 -0.065656"/>
+    <geometry>
+      <mesh filename="package://trial_mob_rob_description/meshes/Left_Wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Right_Wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-1.1903515317185365e-07 -0.02065162470168516 -1.3388605042685686e-07"/>
+    <mass value="1.7115433383420542"/>
+    <inertia ixx="0.002492" ixy="0.0" ixz="0.0" iyy="0.004743" iyz="0.0" izz="0.002492"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.009237 -0.192121 -0.065656"/>
+    <geometry>
+      <mesh filename="package://trial_mob_rob_description/meshes/Right_Wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.009237 -0.192121 -0.065656"/>
+    <geometry>
+      <mesh filename="package://trial_mob_rob_description/meshes/Right_Wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Castor_Wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.20348688096484063 -0.22252099970168598 -0.004966793745548912"/>
+    <mass value="0.013445107924163466"/>
+    <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="1e-06" iyz="-0.0" izz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.026974 -0.223342 -0.011562"/>
+    <geometry>
+      <mesh filename="package://trial_mob_rob_description/meshes/Castor_Wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.026974 -0.223342 -0.011562"/>
+    <geometry>
+      <mesh filename="package://trial_mob_rob_description/meshes/Castor_Wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Left__Motor_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.005181000837964869 -0.2142433938432247 0.02409386087721002"/>
+    <mass value="0.6244104719963113"/>
+    <inertia ixx="0.000322" ixy="7.8e-05" ixz="-0.0" iyy="0.000346" iyz="0.0" izz="0.000476"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.026974 -0.083342 -0.041562"/>
+    <geometry>
+      <mesh filename="package://trial_mob_rob_description/meshes/Left__Motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.026974 -0.083342 -0.041562"/>
+    <geometry>
+      <mesh filename="package://trial_mob_rob_description/meshes/Left__Motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Right_Motor_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.03179276109817935 -0.231098605632112 0.024093860877209675"/>
+    <mass value="0.6244104719963124"/>
+    <inertia ixx="0.000322" ixy="7.8e-05" ixz="0.0" iyy="0.000346" iyz="-0.0" izz="0.000476"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.026974 -0.361342 -0.041562"/>
+    <geometry>
+      <mesh filename="package://trial_mob_rob_description/meshes/Right_Motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.026974 -0.361342 -0.041562"/>
+    <geometry>
+      <mesh filename="package://trial_mob_rob_description/meshes/Right_Motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Left_Motor" type="continuous">
+  <origin rpy="0 0 0" xyz="0.019237 -0.276121 0.024094"/>
+  <parent link="Left__Motor_1"/>
+  <child link="Left_Wheel_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Right_motor" type="continuous">
+  <origin rpy="0 0 0" xyz="0.017737 -0.169221 0.024094"/>
+  <parent link="Right_Motor_1"/>
+  <child link="Right_Wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid15" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.026974 0.223342 0.011562"/>
+  <parent link="base_link"/>
+  <child link="Castor_Wheel_1"/>
+</joint>
+
+<joint name="Rigid17" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.026974 0.083342 0.041562"/>
+  <parent link="base_link"/>
+  <child link="Left__Motor_1"/>
+</joint>
+
+<joint name="Rigid18" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.026974 0.361342 0.041562"/>
+  <parent link="base_link"/>
+  <child link="Right_Motor_1"/>
+</joint>
+
+</robot>
