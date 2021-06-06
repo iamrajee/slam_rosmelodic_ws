@@ -3,7 +3,7 @@
   <!-- <arg name="model" default="tb3burger"/> -->
   
   <!-- Gmapping -->
-  <arg name="set_base_frame" default="base_footprint"/>
+  <arg name="set_base_frame" default="base_footprint"/> <!--base_footprint<==-->
   <arg name="set_odom_frame" default="odom"/>
   <arg name="set_map_frame"  default="map"/>
   <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">

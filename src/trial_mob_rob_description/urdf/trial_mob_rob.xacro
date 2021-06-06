@@ -4,6 +4,14 @@
 <xacro:include filename="$(find trial_mob_rob_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find trial_mob_rob_description)/urdf/trial_mob_rob.trans" />
 <xacro:include filename="$(find trial_mob_rob_description)/urdf/trial_mob_rob.gazebo" />
+
+<!-- <link name="base_footprint"/>
+<joint name="base_joint" type="fixed">
+    <origin xyz="0 0 0.1" rpy="0 0 0" />
+    <parent link="base_footprint"/>
+    <child link="base_link" />
+</joint> -->
+
 <link name="base_link">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.0034871190351591563 0.0007044231053578187 0.08143236205127172"/>

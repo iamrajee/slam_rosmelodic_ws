@@ -39,7 +39,7 @@
         <gazebo reference="${name}_link">
             <sensor type="ray" name="${name}">
                 <pose>0 0 0 0 0 0</pose>
-                <visualize>true</visualize>
+                <visualize>true</visualize> <!--For visualization-->>
                 <update_rate>5</update_rate>
                 <ray>
                     <scan>
@@ -58,7 +58,7 @@
                     </scan>
                     <range>
                         <min>0.02</min>
-                        <max>4</max>
+                        <max>1</max> <!--changed form 4 to 1 for resolving obstacle issue -->
                         <resolution>0.01</resolution>
                     </range>
                 </ray>

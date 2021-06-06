@@ -19,6 +19,8 @@
       <uri>model://ground_plane</uri>
       <pose>0 0 -0.1 0 -0 0</pose>
     </include>
+
+    
     <model name="aws_robomaker_hospital_floor_01_floor_1">
       <include>
         <uri>model://aws_robomaker_hospital_floor_01_floor</uri>
@@ -33,6 +35,7 @@
         <pose>-0.013823 -0.013783 0 0 -0 0</pose>
       </include>
     </model>
+    <!--
     <model name="aws_robomaker_hospital_nursesstation_01_1">
       <include>
         <uri>model://aws_robomaker_hospital_nursesstation_01</uri>
@@ -1286,5 +1289,6 @@
         <pose>1.30985 -0.727185 -0 0 0 -1.53446</pose>
       </include>
     </model>
+    -->
   </world>
 </sdf>
