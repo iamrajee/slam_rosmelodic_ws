@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<robot name="ajrobot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/DarkGrey" />
+<xacro:property name="blueglow_color" value="Gazebo/BlueGlow" />
+<xacro:property name="silver_color" value="Gazebo/Silver" />
+<xacro:property name="flatblack_color" value="Gazebo/FlatBlack" />
+<xacro:property name="blue_color" value="Gazebo/Blue" />
+
+
+<gazebo reference="base_link">
+  <material>${body_color}</material>
+</gazebo>
+
+<gazebo reference="rwheel_1">
+  <material>${flatblack_color}</material>
+</gazebo>
+
+<gazebo reference="lwheel_1">
+  <material>${flatblack_color}</material>
+</gazebo>
+
+<gazebo reference="casterf_1">
+  <material>${blue_color}</material>
+</gazebo>
+
+<gazebo reference="casterb_1">
+  <material>${blue_color}</material>
+</gazebo>
+
+<gazebo reference="tube_frame_1">
+  <material>${silver_color}</material>
+</gazebo>
+
+<gazebo reference="tubefr_1">
+  <material>${blueglow_color}</material>
+</gazebo>
+
+<gazebo reference="tubebl_1">
+  <material>${blueglow_color}</material>
+</gazebo>
+
+<gazebo reference="tubebr_1">
+  <material>${blueglow_color}</material>
+</gazebo>
+
+<gazebo reference="tubefl_1">
+  <material>${blueglow_color}</material>
+</gazebo>
+
+<gazebo reference="lidar_1">
+  <material>${blue_color}</material>
+</gazebo>
+
+<gazebo reference="camera_1">
+  <material>${flatblack_color}</material>
+</gazebo>
+
+<gazebo reference="pir_1">
+  <material>${blue_color}</material>
+</gazebo>
+
+</robot>

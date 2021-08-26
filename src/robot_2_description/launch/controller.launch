@@ -1,0 +1,9 @@
+<launch>
+
+<rosparam file="$(find AJ_Robot_1_description)/launch/controller.yaml" command="load"/>
+<node args="Rev1_position_controller Rev2_position_controller joint_state_controller " name="controller_spawner" ns="AJ_Robot_1" output="screen" pkg="controller_manager" respawn="false" type="spawner"/>
+<node name="robot_state_publisher" output="screen" pkg="robot_state_publisher" respawn="false" type="robot_state_publisher">
+  <remap from="/joint_states" to="/AJ_Robot_1/joint_states"/>
+</node>
+
+</launch>

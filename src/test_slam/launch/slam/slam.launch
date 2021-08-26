@@ -21,6 +21,8 @@
     <param name="tf_prefix" value=""/><!--multi_robot_names-->
   </node>
 
+  <!-- <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher"/> -->
+
   <!-- ============================= gmapping ============================== -->
   <include file="$(find test_slam)/launch/slam_methods/$(arg slam_methods).launch">
     <!-- <arg name="model" value="$(arg model)"/> -->

@@ -1,0 +1,357 @@
+<?xml version="1.0" ?>
+<robot name="ajrobot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find ajrobot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find ajrobot_description)/urdf/ajrobot.trans" />
+<xacro:include filename="$(find ajrobot_description)/gazebo/ajrobot_detailed_materials.gazebo" />
+<xacro:include filename="$(find ajrobot_description)/gazebo/ajrobot_detailed_physics.gazebo" />
+<xacro:include filename="$(find ajrobot_description)/gazebo/ajrobot_detailed_plugins.gazebo" />
+
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0018939651836912175 0.0007828486855805901 0.08750494563386604"/>
+    <mass value="14.612879724425715"/>
+    <inertia ixx="0.053945" ixy="-1e-06" ixz="-0.000455" iyy="0.056464" iyz="-1e-06" izz="0.04208"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rwheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-6.839292989729178e-08 0.004782074005437467 -9.742423537351108e-08"/>
+    <mass value="0.299599881711073"/>
+    <inertia ixx="7.7e-05" ixy="0.0" ixz="0.0" iyy="0.000128" iyz="-0.0" izz="7.7e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.000209 0.068118 -0.027225"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/rwheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.000209 0.068118 -0.027225"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/rwheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lwheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-1.1529642886457642e-07 -0.004781660653823447 -9.74242354047361e-08"/>
+    <mass value="0.2995998817110733"/>
+    <inertia ixx="7.7e-05" ixy="0.0" ixz="-0.0" iyy="0.000128" iyz="0.0" izz="7.7e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.000209 -0.069032 -0.027225"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/lwheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.000209 -0.069032 -0.027225"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/lwheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="casterf_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.020000091857341376 2.0664943358090528e-07 -0.008287607044725063"/>
+    <mass value="0.03809624106129119"/>
+    <inertia ixx="2e-06" ixy="0.0" ixz="0.0" iyy="2e-06" iyz="-0.0" izz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.078209 -0.000782 -0.019425"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/casterf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.078209 -0.000782 -0.019425"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/casterf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="casterb_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.019999908142658653 2.0664943359424096e-07 -0.008287607044725063"/>
+    <mass value="0.03809624106129119"/>
+    <inertia ixx="2e-06" ixy="-0.0" ixz="0.0" iyy="2e-06" iyz="-0.0" izz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.077791 -0.000782 -0.019425"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/casterb_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.077791 -0.000782 -0.019425"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/casterb_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="tube_frame_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-4.080931042925483e-06 1.9031895149136755e-07 0.13065977257343506"/>
+    <mass value="4.848852678240971"/>
+    <inertia ixx="0.033448" ixy="0.0" ixz="1e-06" iyy="0.033447" iyz="0.0" izz="0.004073"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.000209 -0.000782 -0.196225"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/tube_frame_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.000209 -0.000782 -0.196225"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/tube_frame_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="tubefr_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-9.185672147915547e-08 2.0664943387038726e-07 0.09737489295527291"/>
+    <mass value="0.20553219445659127"/>
+    <inertia ixx="0.000734" ixy="-0.0" ixz="-0.0" iyy="0.000734" iyz="0.0" izz="4e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.032291 0.031718 -0.204025"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/tubefr_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.032291 0.031718 -0.204025"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/tubefr_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="tubebl_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-9.185672179834459e-08 2.066494334679314e-07 0.09737489295527413"/>
+    <mass value="0.20553219445659004"/>
+    <inertia ixx="0.000734" ixy="-0.0" ixz="-0.0" iyy="0.000734" iyz="-0.0" izz="4e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.032709 -0.033282 -0.204025"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/tubebl_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.032709 -0.033282 -0.204025"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/tubebl_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="tubebr_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-9.18567220134503e-08 2.0664941051407038e-07 0.09737489295527291"/>
+    <mass value="0.20553219445659146"/>
+    <inertia ixx="0.000734" ixy="0.0" ixz="-0.0" iyy="0.000734" iyz="0.0" izz="4e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.032709 0.031718 -0.204025"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/tubebr_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.032709 0.031718 -0.204025"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/tubebr_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="tubefl_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-9.185672134037759e-08 2.0664941021569794e-07 0.1023748929552753"/>
+    <mass value="0.20553219445659043"/>
+    <inertia ixx="0.000734" ixy="-0.0" ixz="-0.0" iyy="0.000734" iyz="-0.0" izz="4e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.032291 -0.033282 -0.197525"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/tubefl_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.032291 -0.033282 -0.197525"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/tubefl_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.02710148550851633 -3.962802308521418e-15 0.013424158875999292"/>
+    <mass value="0.31426694711058734"/>
+    <inertia ixx="5.5e-05" ixy="-0.0" ixz="1.7e-05" iyy="9.8e-05" iyz="0.0" izz="0.000113"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.055 0.0 -0.115625"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.055 0.0 -0.115625"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.01651690664406253 2.1949062960755807e-07 2.4225212578415922e-05"/>
+    <mass value="0.5431241307352369"/>
+    <inertia ixx="0.000185" ixy="0.0" ixz="0.0" iyy="0.000131" iyz="0.0" izz="0.000143"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.052209 -0.000782 -0.071425"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.052209 -0.000782 -0.071425"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pir_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0017280643759984352 4.3683251460535644e-14 -1.1102230246251565e-16"/>
+    <mass value="0.001707151080172322"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.058 -0.0 -0.404"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/pir_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.058 -0.0 -0.404"/>
+    <geometry>
+      <mesh filename="package://ajrobot_description/meshes/pir_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="rwheel_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="0.000209 -0.068118 0.027225"/>
+  <parent link="base_link"/>
+  <child link="rwheel_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="lwheel_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="0.000209 0.069032 0.027225"/>
+  <parent link="base_link"/>
+  <child link="lwheel_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="casterf_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.078209 0.000782 0.019425"/>
+  <parent link="base_link"/>
+  <child link="casterf_1"/>
+</joint>
+
+<joint name="casterb_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.077791 0.000782 0.019425"/>
+  <parent link="base_link"/>
+  <child link="casterb_1"/>
+</joint>
+
+<joint name="tubeframe_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.000209 0.000782 0.196225"/>
+  <parent link="base_link"/>
+  <child link="tube_frame_1"/>
+</joint>
+
+<joint name="tubefr_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.0325 -0.0325 0.0078"/>
+  <parent link="tube_frame_1"/>
+  <child link="tubefr_1"/>
+</joint>
+
+<joint name="tubebl_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0325 0.0325 0.0078"/>
+  <parent link="tube_frame_1"/>
+  <child link="tubebl_1"/>
+</joint>
+
+<joint name="tubebr_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0325 -0.0325 0.0078"/>
+  <parent link="tube_frame_1"/>
+  <child link="tubebr_1"/>
+</joint>
+
+<joint name="tubefl_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.0325 0.0325 0.0013"/>
+  <parent link="tube_frame_1"/>
+  <child link="tubefl_1"/>
+</joint>
+
+<joint name="lidar_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.055 0.0 0.115625"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="camera_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.052209 0.000782 0.071425"/>
+  <parent link="base_link"/>
+  <child link="camera_1"/>
+</joint>
+
+<joint name="pir_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.057791 -0.000782 0.207775"/>
+  <parent link="tube_frame_1"/>
+  <child link="pir_1"/>
+</joint>
+
+</robot>

@@ -1,0 +1,170 @@
+<?xml version="1.0" ?>
+<robot name="rs_go" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find rs_go)/urdf/materials.xacro" />
+<xacro:include filename="$(find rs_go)/urdf/rs_go.trans" />
+<xacro:include filename="$(find rs_go)/urdf/rs_go.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.125 0.2576675591905234 0.14581411451370685"/>
+    <mass value="10.00"/> <!-- mass = 234.76101992664752-->
+    <inertia ixx="5.75365" ixy="0.0" ixz="0.0" iyy="2.395906" iyz="-0.162257" izz="5.804866"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rs_go/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="rs_color"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rs_go/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_left_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.012499999999999997 -5.3013149425851225e-15 0.0"/>
+    <mass value="1.5259304567108163"/>
+    <inertia ixx="0.001926" ixy="-0.0" ixz="-0.0" iyy="0.001043" iyz="-0.0" izz="0.001043"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.1 -0.05"/>
+    <geometry>
+      <mesh filename="package://rs_go/meshes/front_left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.1 -0.05"/>
+    <geometry>
+      <mesh filename="package://rs_go/meshes/front_left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="back_left_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.012499999999999995 -5.329070518200751e-15 -4.163336342344337e-17"/>
+    <mass value="1.5259304567108167"/>
+    <inertia ixx="0.001926" ixy="-0.0" ixz="-0.0" iyy="0.001043" iyz="0.0" izz="0.001043"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.4 -0.05"/>
+    <geometry>
+      <mesh filename="package://rs_go/meshes/back_left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.4 -0.05"/>
+    <geometry>
+      <mesh filename="package://rs_go/meshes/back_left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_right_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.012500000000000011 -5.23192600354605e-15 0.0"/>
+    <mass value="1.525930456710816"/>
+    <inertia ixx="0.001926" ixy="0.0" ixz="0.0" iyy="0.001043" iyz="-0.0" izz="0.001043"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.25 -0.1 -0.05"/>
+    <geometry>
+      <mesh filename="package://rs_go/meshes/front_right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.25 -0.1 -0.05"/>
+    <geometry>
+      <mesh filename="package://rs_go/meshes/front_right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="back_right_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.012499999999999956 -5.329070518200751e-15 0.0"/>
+    <mass value="1.5259304567108165"/>
+    <inertia ixx="0.001926" ixy="-0.0" ixz="0.0" iyy="0.001043" iyz="0.0" izz="0.001043"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.25 -0.4 -0.05"/>
+    <geometry>
+      <mesh filename="package://rs_go/meshes/back_right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.25 -0.4 -0.05"/>
+    <geometry>
+      <mesh filename="package://rs_go/meshes/back_right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="sensor_laser">
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <mass value="0.1"/>
+    <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <geometry>
+      <cylinder radius="0.02" length="0.05"/> 
+    </geometry>
+    <material name="red">
+      <color rgba="1.0 0.0 0.0 1.0"/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <geometry>
+      <cylinder radius="0.02" length="0.05"/> 
+    </geometry>
+  </collision>
+</link>
+
+
+<joint name="front_left_wheel_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 0.1 0.05"/>
+  <parent link="base_link"/>
+  <child link="front_left_wheel_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="back_left_wheel_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 0.4 0.05"/>
+  <parent link="base_link"/>
+  <child link="back_left_wheel_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="front_right_wheel_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.25 0.1 0.05"/>
+  <parent link="base_link"/>
+  <child link="front_right_wheel_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="back_right_wheel_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.25 0.4 0.05"/>
+  <parent link="base_link"/>
+  <child link="back_right_wheel_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="sensor_laser_joint" type="fixed">
+  <origin xyz="-0.125 0.15 0.30" rpy="0.0 0.0 -1.570796"/>
+  <parent link="base_link"/>
+  <child link="sensor_laser"/>
+  
+</joint>
+</robot>
