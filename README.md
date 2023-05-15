@@ -66,17 +66,18 @@ The below codebase is a ROS melodic workspace that contains a variety of package
     Terminal: roslaunch test_slam navigation.launch
     ```
 
-Here are some details about the packages in the codebase:
-gmapping: gmapping is a 2D SLAM package that uses a Rao-Blackwellized particle filter. It is a popular choice for SLAM applications that require low computational resources.
-hector_slam: Hector_slam is a 2D SLAM package that uses a Hector laser scanner odometry and mapping algorithm. It is a good choice for SLAM applications that use a laser scanner.
-slam_gmapping: slam_gmapping is a 2D SLAM package that combines the gmapping and Hector SLAM packages. It is a good choice for SLAM applications that require the best of both worlds.
-cartographer: cartographer is a 3D SLAM package that uses a probabilistic graph SLAM algorithm. It is a good choice for SLAM applications that require high accuracy and robustness.
-loam_livox: loam_livox is a 3D SLAM package that uses a LiDAR odometry and mapping algorithm. It is a good choice for SLAM applications that use a LiDAR sensor.
+Here are some details about the packages in the codebase:  
+gmapping: gmapping is a 2D SLAM package that uses a Rao-Blackwellized particle filter. It is a popular choice for SLAM applications that require low computational resources.  
+hector_slam: Hector_slam is a 2D SLAM package that uses a Hector laser scanner odometry and mapping algorithm. It is a good choice for SLAM applications that use a laser scanner.  
+slam_gmapping: slam_gmapping is a 2D SLAM package that combines the gmapping and Hector SLAM packages. It is a good choice for SLAM applications that require the best of both worlds.  
+cartographer: cartographer is a 3D SLAM package that uses a probabilistic graph SLAM algorithm. It is a good choice for SLAM applications that require high accuracy and robustness.  
+loam_livox: loam_livox is a 3D SLAM package that uses a LiDAR odometry and mapping algorithm. It is a good choice for SLAM applications that use a LiDAR sensor.  
 
-The codebase also includes a number of other packages that are used to support the SLAM packages, such as:
-tf: A package that provides a transformation framework for ROS.
-nav_msgs: A package that provides messages for navigation.
-sensor_msgs: A package that provides messages for sensor data.
+The codebase also includes a number of other packages that are used to support the SLAM packages, such as:  
+tf: A package that provides a transformation framework for ROS.  
+nav_msgs: A package that provides messages for navigation.  
+sensor_msgs: A package that provides messages for sensor data.  
+
 ---
 <br/><br/>
 # Helper Scripts
