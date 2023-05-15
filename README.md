@@ -46,7 +46,7 @@ The below codebase is a ROS melodic workspace that contains a variety of package
 
 ## Package description
 
-_Here are some details about the packages in the codebase:_  
+### _Here are some details about the packages in the codebase:_  
 **gmapping**: gmapping is a 2D SLAM package that uses a Rao-Blackwellized particle filter. It is a popular choice for SLAM applications that require low computational resources.  
 
 **hector_slam**: Hector_slam is a 2D SLAM package that uses a Hector laser scanner odometry and mapping algorithm. It is a good choice for SLAM applications that use a laser scanner.  
@@ -57,7 +57,7 @@ _Here are some details about the packages in the codebase:_
 
 <!-- **loam_livox**: loam_livox is a 3D SLAM package that uses a LiDAR odometry and mapping algorithm. It is a good choice for SLAM applications that use a LiDAR sensor.   -->
 
-_The codebase also includes a number of other packages that are used to support the SLAM packages, such as:_  
+### _The codebase also includes a number of other packages that are used to support the SLAM packages, such as:_  
 
 **tf**: A package that provides a transformation framework for ROS.  
 
