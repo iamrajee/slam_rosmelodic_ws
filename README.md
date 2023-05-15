@@ -5,8 +5,7 @@
 [![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://www.firsttimersonly.com/)
 [![Gem Version](http://img.shields.io/gem/v/badgerbadgerbadger.svg?style=flat-square)](https://rubygems.org/gems/badgerbadgerbadger)
 --->
-
-This ROS melodic workspace is for testing various SLAM methods(Gmapping, Karto, Hector, Cartographer etc).
+The below codebase is a ROS melodic workspace that contains a variety of packages for simultaneous localization and mapping (SLAM). Workspace is for testing various SLAM methods(Gmapping, Karto, Hector, Cartographer etc).The codebase is well-organized and easy to use. It includes a number of tutorials that provide instructions on how to use the SLAM packages. The codebase is a valuable resource for anyone who wants to learn about SLAM or who wants to use SLAM in their own projects.
 <br/><br/>
 
 ## Table of content
@@ -67,6 +66,17 @@ This ROS melodic workspace is for testing various SLAM methods(Gmapping, Karto, 
     Terminal: roslaunch test_slam navigation.launch
     ```
 
+Here are some details about the packages in the codebase:
+gmapping: gmapping is a 2D SLAM package that uses a Rao-Blackwellized particle filter. It is a popular choice for SLAM applications that require low computational resources.
+hector_slam: Hector_slam is a 2D SLAM package that uses a Hector laser scanner odometry and mapping algorithm. It is a good choice for SLAM applications that use a laser scanner.
+slam_gmapping: slam_gmapping is a 2D SLAM package that combines the gmapping and Hector SLAM packages. It is a good choice for SLAM applications that require the best of both worlds.
+cartographer: cartographer is a 3D SLAM package that uses a probabilistic graph SLAM algorithm. It is a good choice for SLAM applications that require high accuracy and robustness.
+loam_livox: loam_livox is a 3D SLAM package that uses a LiDAR odometry and mapping algorithm. It is a good choice for SLAM applications that use a LiDAR sensor.
+
+The codebase also includes a number of other packages that are used to support the SLAM packages, such as:
+tf: A package that provides a transformation framework for ROS.
+nav_msgs: A package that provides messages for navigation.
+sensor_msgs: A package that provides messages for sensor data.
 ---
 <br/><br/>
 # Helper Scripts
