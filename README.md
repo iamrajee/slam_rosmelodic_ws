@@ -145,7 +145,7 @@ The below codebase is a ROS melodic workspace that contains a variety of package
     #!/bin/bash
     ssh rajendra@rajendra
     ```
-    > It will ssh into another system. Useful when using multiple ros masters. Run it as `./rajendra.sh`
+    > It will ssh into another system. Useful when using multiple ros masters. Run it as `./ssh_into_another_computer.sh`
 
 ---
 <br/><br/>
